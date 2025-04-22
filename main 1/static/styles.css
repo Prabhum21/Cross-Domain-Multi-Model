@@ -1,0 +1,145 @@
+:root {
+    --primary-color: #2c5282; /* Deep Blue for primary actions */
+    --secondary-color: #718096; /* Slate Gray for secondary elements */
+    --accent-color: #38b2ac; /* Teal for subtle highlights */
+    --bg-color: #f7fafc; /* Soft White background */
+    --text-color: #2d3748; /* Dark Gray text */
+    --card-bg: rgba(255, 255, 255, 0.98); /* Nearly opaque white card */
+    --card-shadow: 0 6px 12px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+    --btn-hover-bg: #1a365d; /* Darker Blue for hover */
+}
+
+[data-theme="dark"] {
+    --primary-color: #2c5282; /* Maintain consistency, slightly lighter in dark mode */
+    --secondary-color: #718096; /* Slate Gray works in both modes */
+    --accent-color: #38b2ac; /* Teal remains as accent */
+    --bg-color: #1a202c; /* Dark Gray background */
+    --text-color: #e2e8f0; /* Light Gray text */
+    --card-bg: rgba(45, 55, 72, 0.98); /* Darker card background */
+    --card-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow in dark mode */
+    --btn-hover-bg: #1a365d; /* Hover stays consistent */
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar {
+    background-color: var(--primary-color); /* Use deep blue for navbar */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: #fff; /* White text for contrast */
+}
+
+.card {
+    background: var(--card-bg);
+    border: none;
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+    font-weight: 600;
+    font-size: 1.25rem;
+    color: var(--primary-color); /* Deep blue for titles */
+}
+
+.btn {
+    background: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    background: var(--btn-hover-bg);
+    transform: translateY(-2px);
+    color: #fff;
+}
+
+.btn-gradient {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color)); /* Blue to Teal gradient */
+    border: none;
+}
+
+.btn-floating {
+    background: var(--accent-color); /* Teal for floating button */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.btn-floating:hover {
+    background: #319795; /* Slightly darker teal on hover */
+}
+
+#video-feed img,
+#screenshot-preview img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.toast {
+    background-color: var(--accent-color); /* Teal for toast */
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Theme Toggle Button */
+#theme-toggle {
+    border-color: var(--secondary-color);
+    color: var(--text-color);
+}
+
+#theme-toggle:hover {
+    background: var(--secondary-color);
+    color: var(--bg-color);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    #video-feed img,
+    #screenshot-preview img {
+        height: 200px;
+    }
+}
